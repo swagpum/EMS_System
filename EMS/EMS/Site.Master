@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EMS201724112145.View.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="h-100">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title></title>
+
+    <link href="css/Site.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet" />
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .table{
+          table-layout: fixed;
+      }
+
+      .center-bg {
+          background: url("../img/default_bg2.jpg") no-repeat center center fixed;
+          background-size: cover;
+          overflow: hidden;
+      }
+    </style>
+
+</head>
+<body class="d-flex flex-column h-100">
+    <!--页首-->
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: black;">
+            <a class="navbar-brand" href="#">设备保管及查询系统</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <!-- 实现点击当前页后，图片悬停在上面，如：点击首页，首页有图片效果，由于是母版页，每次点击都会刷新当前页面，因此用js无效 -->
+                        <!-- 此种方式必须有真实存在的地址才可调用 -->
+                    <li class="nav-item" runat="server" id="A">
+                        <a class="nav-link" href="home.aspx">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" runat="server" id="B">
+                        <a class="nav-link" href="showEqp.aspx">Equipment</a>
+                    </li>
+                    <li class="nav-item" runat="server" id="C">
+                        <a class="nav-link" href="showDept.aspx">Department</a>
+                    </li>
+                    <li class="nav-item" runat="server" id="D">
+                        <a class="nav-link" href="showEmp.aspx">Employee</a>
+                    </li>
+                    <li class="nav-item" runat="server" id="E">
+                        <a class="nav-link" href="personal.aspx">Personal</a>
+                    </li>
+                    <li class="nav-item" runat="server" id="F">
+                        <a class="nav-link" href="logout.aspx">Logout</a>
+                    </li>
+                    <li class="nav-item" runat="server">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".navbar-nav li").click(function () {
+                            $(this).siblings('li').removeClass('active'); //删除其兄弟元素的样式
+                            $(this).addClass('active'); //为点击元素添加类名
+                        });
+                    });
+                </script>
+            </div>
+        </nav>
+    </header>
+
+    <!--页面内容-->
+    <form runat="server">
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="Scripts/WebForms/Focus.js" />
+                
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <!-- Begin page content -->
+        <main role="main" class="flex-shrink-0">
+            
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </main>       
+    </form>
+
+    <!--页尾-->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">&copy; <%: DateTime.Now.Year %> ZSJ - 设备保管及查询系统</span>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

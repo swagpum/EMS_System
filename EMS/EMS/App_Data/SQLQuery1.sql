@@ -1,0 +1,1 @@
+﻿exec sp_addsrvrolemember N'IIS APPPOOL\.NET v4.5 Classic', sysadmin

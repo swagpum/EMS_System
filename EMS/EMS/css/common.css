@@ -1,0 +1,36 @@
+﻿body {
+    background-image: url("img/梦幻紫.PNG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden
+}
+
+.navbar-inverse {
+    background-color: #9b8fd1;
+    height: 52px;
+}
+
+.navbar-inverse .title-1 li a {
+    color: black;
+    margin-top: 8px;
+}
+
+.navbar-inverse .title-1 li:nth-child(1) {
+    margin-left: 900px;
+}
+
+.panel-collapse .panel-body ul li a {
+    text-align: center;
+}
+
+.blank {
+    height: 50px;
+}
+
+.nav-left {
+    height: 700px;
+    width: 230px;
+}
